@@ -1,0 +1,17 @@
+# Root .gitignore
+.env
+*.pyc
+__pycache__/
+.venv/
+venv/
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+
+# Flutter
+frontend/build/
+frontend/.dart_tool/
+frontend/.packages
+frontend/.flutter-plugins
+frontend/.flutter-plugins-dependencies
