@@ -1,8 +1,22 @@
+import 'package:flutter/foundation.dart';
+
 /// API configuration — base URL and endpoints.
 class ApiConfig {
-  // Change this to your production URL when deploying
-  static const String baseUrl = 'http://10.0.2.2:8000/api/v1'; // Android emulator -> host
-  // static const String baseUrl = 'http://localhost:8000/api/v1'; // Web / iOS simulator
+  static const String _androidEmulatorBaseUrl = 'http://10.0.2.2:8000/api/v1';
+  static const String _localhostBaseUrl = 'http://localhost:8000/api/v1';
+
+  /// Returns the correct API host for the current platform.
+  static String get baseUrl {
+    if (kIsWeb) {
+      return _localhostBaseUrl;
+    }
+
+    if (defaultTargetPlatform == TargetPlatform.android) {
+      return _androidEmulatorBaseUrl;
+    }
+
+    return _localhostBaseUrl;
+  }
 
   // Auth
   static const String register = '/auth/register';

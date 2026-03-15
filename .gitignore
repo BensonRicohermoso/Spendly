@@ -1,4 +1,6 @@
 # Root .gitignore
+STUDY_GUIDE.md
+setup_git_history.ps1
 .env
 *.pyc
 __pycache__/
